@@ -27,3 +27,9 @@ jpeg-denoise-75-89_model_3:
 jpeg-denoise-55-74_model_3:
 	jpeg quality: 55~74
 	valid: 35.10 0.962
+jpeg-denoise-30-54_model_1:
+	jpeg quality: 55~74
+	valid: 32.70 0.947
+jpeg-denoise-1-29_model_1:
+	jpeg quality: 55~74
+	valid: 27.23 0.877

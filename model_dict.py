@@ -20,5 +20,11 @@ def get_model_dict():
 	},
 	'jpeg-medium':{
 		'path': 'models/jpeg-denoise-55-74_model_3.h5',
+	},
+	'jpeg-high':{
+		'path': 'models/jpeg-denoise-30-54_model_1.h5',
+	},
+	'jpeg-veryhigh':{
+		'path': 'models/jpeg-denoise-1-29_model_1.h5',
 	}
 }
