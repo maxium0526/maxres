@@ -26,5 +26,8 @@ def get_model_dict():
 	},
 	'jpeg-veryhigh':{
 		'path': 'models/jpeg-denoise-1-29_model_1.h5',
+	},
+	'jpeg-quality-classifier':{
+		'path': 'models/jpeg-quality-classifier_model_1.h5',
 	}
 }

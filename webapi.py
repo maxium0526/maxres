@@ -6,6 +6,9 @@ from PIL import Image
 from tensorflow.keras.models import load_model
 from tensorflow.keras.backend import clear_session
 from model_dict import get_model_dict
+import utils
+import statistics
+
 
 model_dict = get_model_dict()
 
@@ -50,7 +53,28 @@ def maxres():
 				model = models[jpeg_denoise]
 				img = model.predict_on_batch(img)
 			elif jpeg_denoise in ['jpeg-auto']:
-				pass
+				classifier = models['jpeg-quality-classifier']
+				img_patches = utils.crop_image(img.reshape(h, w, c), 224, num=160)
+				img_patches = np.array(img_patches).reshape(160, 224, 224, 3)
+				preds = classifier.predict_on_batch(img_patches)
+				preds = preds.reshape(-1)
+				quality = statistics.mean(preds)
+				quality = quality * 100
+				quality = np.rint(quality)
+
+				if quality >=90:
+					model = models['jpeg-verylow']
+				elif quality >=75:
+					model = models['jpeg-low']
+				elif quality >=55:
+					model = models['jpeg-medium']
+				elif quality >=30:
+					model = models['jpeg-high']
+				else:
+					model = models['jpegvery-high']
+
+				img = model.predict_on_batch(img)
+
 			elif jpeg_denoise in ['jpeg-none']:
 				pass
 
