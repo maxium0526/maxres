@@ -2,10 +2,18 @@ upsample2x_model_1:
 	input*2 = output
 	train: three, N/A
 	valid: 32.56 0.959
-upsample2x_model_1:
+upsample2x_model_9:
 	input*2 = output
 	train: three, N/A
 	valid: 33.54 0.967
+upsample2x_model_13:
+	input*2 = output
+	train: three, N/A
+	valid: 33.66 0.967
+upsample2x_model_14:
+	input*2 = output
+	train: three, N/A
+	valid: 33.75 0.968
 upsample4x_model_6:
 	input*4 = output
 	train: three, N/A

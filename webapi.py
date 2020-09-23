@@ -9,8 +9,8 @@ from model_dict import get_model_dict
 
 model_dict = get_model_dict()
 
-jpeg_denoise_trans = [None, 'jpeg-verylow', 'jpeg-low', 'jpeg-medium', 'jpeg-high', 'jpeg-veryhigh']
-scale_trans = [None, None, '2x', None, '4x']
+jpeg_denoises = ['jpeg-none', 'jpeg-auto', 'jpeg-verylow', 'jpeg-low', 'jpeg-medium', 'jpeg-high', 'jpeg-veryhigh']
+scales = ['1x', '2x', '4x']
 
 models = {}
 
@@ -25,13 +25,13 @@ def index():
 
 @app.route('/maxres', methods=['POST'])
 def maxres():
-	scale = int(flask.request.form.get('scale'))
-	jpeg_denoise = int(flask.request.form.get('jpeg'))
+	scale = flask.request.form.get('scale')
+	jpeg_denoise = flask.request.form.get('jpeg')
 	img = None
 
-	if scale not in [1, 2, 4]:
+	if scale not in scales:
 		return 'Wrong parameters.', 400
-	if jpeg_denoise not in [-1, 0, 1, 2, 3, 4, 5]:
+	if jpeg_denoise not in jpeg_denoises:
 		return 'Wrong parameters.', 400
 
 	if flask.request.files.get('image'):
@@ -45,13 +45,21 @@ def maxres():
 		h, w, c = img.shape
 		img = img.reshape(-1, h, w, c)
 
-		if jpeg_denoise in [1, 2, 3, 4, 5]:
-			model = models[jpeg_denoise_trans[jpeg_denoise]]
-			img = model.predict_on_batch(img)
+		if jpeg_denoise in jpeg_denoises:
+			if jpeg_denoise in ['jpeg-verylow', 'jpeg-low', 'jpeg-medium', 'jpeg-high', 'jpeg-veryhigh']:	
+				model = models[jpeg_denoise]
+				img = model.predict_on_batch(img)
+			elif jpeg_denoise in ['jpeg-auto']:
+				pass
+			elif jpeg_denoise in ['jpeg-none']:
+				pass
 
-		if scale in [2, 4]:
-			model = models[scale_trans[scale]]
-			img = model.predict_on_batch(img)
+		if scale in scales:
+			if scale in ['2x', '4x']:
+				model = models[scale]
+				img = model.predict_on_batch(img)
+			elif scale in ['1x']:
+				pass
 
 		out = np.rint(img[0] * 255)
 		is_success, buffer = cv.imencode(".png", out)
