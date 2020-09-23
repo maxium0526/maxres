@@ -1,0 +1,21 @@
+upsample2x_model_1:
+	input*2 = output
+	train: three, N/A
+	valid: 32.56 0.959
+upsample2x_model_1:
+	input*2 = output
+	train: three, N/A
+	valid: 33.54 0.967
+upsample4x_model_6:
+	input*4 = output
+	train: three, N/A
+	valid: 26.38, 0.869
+jpeg-denoise-90-100_model_5:
+	jpeg quality: 90~100
+	valid: 38.66 0.980
+jpeg-denoise-75-89_model_3:
+	jpeg quality: 75~89
+	valid: 36.03 0.969
+jpeg-denoise-55-74_model_3:
+	jpeg quality: 55~74
+	valid: 35.10 0.962

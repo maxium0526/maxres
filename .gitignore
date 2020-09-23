@@ -1,4 +1,4 @@
 *.jpg
 *.png
 __pycache__
-models/
+*.h5
