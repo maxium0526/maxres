@@ -1,10 +1,13 @@
 def get_model_dict():
 	return {
 	'2x': {
-		'path': 'models/upsample2x_model_9.h5',
+		'path': 'models/upsample2x_model_13.h5',
 	},
 	'2x-small': {
 		'path': 'models/upsample2x_model_1.h5',
+	},
+	'2x-large': {
+		'path': 'models/upsample2x_model_14.h5',
 	},
 	'4x': {
 		'path': 'models/upsample4x_model_6.h5',
