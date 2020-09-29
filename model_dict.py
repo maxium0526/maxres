@@ -13,7 +13,7 @@ def get_model_dict():
 		'path': 'models/upsample4x_model_6.h5',
 	},
 	'8x': {
-		'path': 'models/upsample8x_model_3.h5',
+		'path': 'models/upsample8x_model_4.h5',
 	},
 	'jpeg-verylow': {
 		'path': 'models/jpeg-denoise-90-100_model_5.h5',
