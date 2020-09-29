@@ -18,6 +18,10 @@ upsample4x_model_6:
 	input*4 = output
 	train: three, N/A
 	valid: 26.38, 0.869
+upsample4x_model_9:
+	input*4 = output
+	train: three, N/A
+	valid: 26.54, 0.881
 jpeg-denoise-90-100_model_5:
 	jpeg quality: 90~100
 	valid: 38.66 0.980
@@ -28,8 +32,8 @@ jpeg-denoise-55-74_model_3:
 	jpeg quality: 55~74
 	valid: 35.10 0.962
 jpeg-denoise-30-54_model_1:
-	jpeg quality: 55~74
+	jpeg quality: 30~54
 	valid: 32.70 0.947
 jpeg-denoise-1-29_model_1:
-	jpeg quality: 55~74
+	jpeg quality: 1~29
 	valid: 27.23 0.877

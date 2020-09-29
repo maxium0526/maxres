@@ -13,7 +13,7 @@ import statistics
 model_dict = get_model_dict()
 
 jpeg_denoises = ['jpeg-none', 'jpeg-auto', 'jpeg-verylow', 'jpeg-low', 'jpeg-medium', 'jpeg-high', 'jpeg-veryhigh']
-scales = ['1x', '2x', '4x']
+scales = ['1x', '2x', '4x', '8x']
 
 models = {}
 
@@ -79,7 +79,7 @@ def maxres():
 				pass
 
 		if scale in scales:
-			if scale in ['2x', '4x']:
+			if scale in ['2x', '4x', '8x']:
 				model = models[scale]
 				img = model.predict_on_batch(img)
 			elif scale in ['1x']:
