@@ -32,5 +32,14 @@ def get_model_dict():
 	},
 	'jpeg-quality-classifier':{
 		'path': 'models/jpeg-quality-classifier_model_1.h5',
-	}
+	},
+	'denoise-light':{
+		'path': 'models/denoise-light_model_2.h5',
+	},
+	'denoise-medium':{
+		'path': 'models/denoise-medium_model_2.h5',
+	},
+	'denoise-strong':{
+		'path': 'models/denoise-strong_model_2.h5',
+	},
 }
