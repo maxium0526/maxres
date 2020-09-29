@@ -23,6 +23,9 @@ Artist: 荻pote
 - 4x:  
 `py maxres.py 4x img_path`
 
+- 8x:
+`py maxres.py 8x img_path`
+
 ##### Jpeg denoise #####
 
 - Very low (Quality: 90 - 100):  
@@ -31,7 +34,27 @@ Artist: 荻pote
 - Low (Quality: 75 - 89):  
 `py maxres.py jpeg-low img_path`
 
-### Web API ###
+- Medium (Quality: 55 - 74):  
+`py maxres.py jpeg-medium img_path`
+
+- High (Quality: 30 - 54):  
+`py maxres.py jpeg-high img_path`
+
+- Very High (Quality: 1 - 29):  
+`py maxres.py jpeg-veryhigh img_path`
+
+##### Denoise #####
+
+- Light:  
+`py maxres.py denoise-light img_path`
+
+- Medium:  
+`py maxres.py denoise-medium img_path`
+
+- Strong:  
+`py maxres.py denoise-strong img_path`
+
+### Web UI/API ###
 
 `py webapi.py`
 
