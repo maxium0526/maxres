@@ -2,10 +2,6 @@
 
 動漫插畫放大器
 
-![sample](https://i.imgur.com/3wtqBx7.png)
-
-Artist: 荻pote
-
 ### Requirements
 
 - Tensorflow 2.2.0
